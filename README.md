@@ -201,7 +201,6 @@ with mlflow.start_run(run_name="feature_engineering") as run:
 
     try:
         # Имитация работы с Feast Feature Store
-        # В реальном проекте здесь был бы код работы с Feast
         print(" Подключение к Feast Feature Store...")
 
         # Загружаем фичи из файла (имитация Feast)
