@@ -1033,45 +1033,6 @@ with DAG(
 
 ```
 
-Файл запуска пайпа <br>
-```
-#!/bin/bash
-
-echo "ЗАПУСК ИСПРАВЛЕННОГО ML PIPELINE"
-
-cd ~/ml5
-source venv_mlflow/bin/activate
-cd ~/ml5/mlflow_ml_pipeline
-
-echo "1. Генерация данных..."
-python steps/01_generate_data.py
-
-echo "2. Валидация..."
-python steps/02_validate_data.py
-
-echo "3.  Feature Engineering..."
-python steps/03_feature_engineering.py
-
-echo "4. Обучение моделей..."
-echo "   Обучение Random Forest..."
-python steps/04_train.py --model-type random_forest
-
-echo " Обучение Gradient Boosting..."
-python steps/04_train.py --model-type gradient_boosting
-
-echo " Обучение Logistic Regression..."
-python steps/04_train.py --model-type logistic_regression
-
-echo "5. Оценка и Model Registry..."
-python steps/05_evaluate.py
-
-echo "6. Деплой (conditional)..."
-python steps/06_deploy.py
-
-
-echo " ML PIPELINE УСПЕШНО ВЫПОЛНЕН!"
-echo " Откройте MLflow UI: http://localhost:5000"
-```
 
 
 ИТОГ: <br>
